@@ -1,0 +1,8 @@
+@extends('layouts.app')
+@section('title','LocalMart BD')
+@section('content')
+<section class="hero"><div class="container"><div class="row align-items-center g-4"><div class="col-lg-7"><h1 class="display-5 fw-bold">LocalMart BD</h1><p class="lead text-muted">A modern e-commerce platform for local retail businesses in Bangladesh.</p><a class="btn btn-primary btn-lg" href="{{ route('products.index') }}">Shop Now</a></div><div class="col-lg-5"><img class="img-fluid rounded" src="https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&w=900&q=80" alt="Local shop"></div></div></div></section>
+<section class="py-5"><div class="container"><h2 class="section-title">Categories</h2><div class="row g-3">@foreach($categories as $category)<div class="col-md-3"><a class="text-decoration-none" href="{{ route('products.index',['category'=>$category->slug]) }}"><div class="stat-card"><h5>{{ $category->name }}</h5><span class="text-muted">{{ $category->products_count }} products</span></div></a></div>@endforeach</div></div></section>
+<section class="py-5 bg-light"><div class="container"><h2 class="section-title">Featured Products</h2><div class="row g-4">@foreach($featuredProducts as $product)<div class="col-sm-6 col-lg-3">@include('customer.partials.product-card')</div>@endforeach</div></div></section>
+<section class="py-5"><div class="container"><h2 class="section-title">Latest Products</h2><div class="row g-4">@foreach($latestProducts as $product)<div class="col-sm-6 col-lg-3">@include('customer.partials.product-card')</div>@endforeach</div></div></section>
+@endsection

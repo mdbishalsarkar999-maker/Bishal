@@ -1,0 +1,3 @@
+@extends('layouts.app')
+@section('title','Login')
+@section('content')<div class="container py-5" style="max-width:520px"><div class="table-card"><h1 class="h3 mb-4">Login</h1><form method="post" action="{{ route('login.store') }}">@csrf<input class="form-control mb-3" name="email" type="email" placeholder="Email" value="{{ old('email') }}"><input class="form-control mb-3" name="password" type="password" placeholder="Password"><label class="form-check mb-3"><input class="form-check-input" name="remember" type="checkbox"> Remember me</label><button class="btn btn-primary w-100">Login</button></form><p class="mt-3 mb-0">No account? <a href="{{ route('register') }}">Register</a></p></div></div>@endsection

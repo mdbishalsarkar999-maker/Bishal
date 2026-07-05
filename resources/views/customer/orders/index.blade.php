@@ -1,0 +1,3 @@
+@extends('layouts.app')
+@section('title','My Orders')
+@section('content')<div class="container py-5"><h1>My Orders</h1><div class="table-card"><table class="table"><thead><tr><th>Order</th><th>Date</th><th>Status</th><th>Total</th><th></th></tr></thead><tbody>@foreach($orders as $order)<tr><td>{{ $order->order_number }}</td><td>{{ $order->created_at->format('d M Y') }}</td><td><span class="badge text-bg-info badge-status">{{ $order->status }}</span></td><td>৳{{ number_format($order->total_amount,2) }}</td><td><a class="btn btn-sm btn-outline-primary" href="{{ route('orders.show',$order) }}">View</a></td></tr>@endforeach</tbody></table>{{ $orders->links() }}</div></div>@endsection

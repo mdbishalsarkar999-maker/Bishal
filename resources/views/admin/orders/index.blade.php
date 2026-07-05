@@ -1,0 +1,3 @@
+@extends('layouts.admin')
+@section('title','Orders')
+@section('content')<div class="table-card"><table class="table"><tr><th>Order</th><th>Customer</th><th>Status</th><th>Payment</th><th>Total</th><th></th></tr>@foreach($orders as $order)<tr><td>{{ $order->order_number }}</td><td>{{ $order->user->name }}</td><td><span class="badge text-bg-info">{{ $order->status }}</span></td><td>{{ $order->payment->status ?? 'pending' }}</td><td>৳{{ number_format($order->total_amount,2) }}</td><td><a class="btn btn-sm btn-outline-primary" href="{{ route('admin.orders.show',$order) }}">View</a></td></tr>@endforeach</table>{{ $orders->links() }}</div>@endsection
