@@ -1,0 +1,4 @@
+<?php $__env->startSection('title','Order Confirmed'); ?>
+<?php $__env->startSection('content'); ?><div class="container py-5 text-center"><div class="table-card mx-auto" style="max-width:620px"><h1>Order Confirmed</h1><p class="lead">Your order number is <strong><?php echo e($order->order_number); ?></strong>.</p><p>Total: ৳<?php echo e(number_format($order->total_amount,2)); ?></p><a class="btn btn-primary" href="<?php echo e(route('orders.show',$order)); ?>">Track Order</a></div></div><?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\LastMinuteProject\resources\views/customer/orders/confirmation.blade.php ENDPATH**/ ?>

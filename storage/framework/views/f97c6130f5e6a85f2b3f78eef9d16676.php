@@ -1,0 +1,4 @@
+<?php $__env->startSection('title','Profile'); ?>
+<?php $__env->startSection('content'); ?><div class="container py-5" style="max-width:620px"><div class="table-card"><h1>Profile</h1><form method="post" action="<?php echo e(route('profile.update')); ?>"><?php echo csrf_field(); ?> <?php echo method_field('PUT'); ?><input class="form-control mb-3" name="name" value="<?php echo e($user->name); ?>"><input class="form-control mb-3" name="email" value="<?php echo e($user->email); ?>" disabled><input class="form-control mb-3" name="phone" value="<?php echo e($user->phone); ?>"><button class="btn btn-primary">Save</button></form></div></div><?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH D:\LastMinuteProject\resources\views/customer/profile/edit.blade.php ENDPATH**/ ?>
